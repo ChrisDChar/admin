@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>admin</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="max-w-7xl mx-auto bg-white p-6 rounded shadow-lg">
+
+        <div class="flex gap-2 mb-4">
+            <input type="text" placeholder="F.I.Sh" class="border p-2 rounded-md flex-1">
+            <select class="border p-1 rounded-md">
+                <option>Lavozim turini tanlang</option>
+            </select>
+            <select class="border p-1 rounded-md">
+                <option>Manzilni tanlang</option>
+            </select>
+            <button id="addBtn" class="bg-[green] text-white px-4 py-2 rounded-md">Qo'shish</button>
+        </div>
+
+        <div class="overflow-x-auto">
+            <table class="min-w-full">
+                <thead>
+                    <tr>
+                        <th class="px-2 py-2 text-left">No</th>
+                        <th class="px-2 py-2 text-left">Ism</th>
+                        <th class="px-2 py-2 text-left">Familiya</th>
+                        <th class="px-2 py-2 text-left">Manzil</th>
+                        <th class="px-2 py-2 text-left">Tug'ilgan kuni</th>
+                        <th class="px-2 py-2 text-left">Lavozim</th>
+                        <th class="px-2 py-2 text-left">Lavozim turi</th>
+                        <th class="px-2 py-2 text-left">Maoshi</th>
+                        <th class="px-2 py-2 text-left">Uylanganmi</th>
+                        <th class="px-2 py-2 text-left">Faoliyat</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="modal" class="fixed inset-0 bg-[black]/50 flex items-center justify-center z-50 hidden">
+        <div id="modalContent" class="mx-auto w-full max-w-md bg-white p-6 items-center justify-center rounded shadow w-96 relative">
+            <h2 class="text-lg font-bold mb-4">Ishchilarning ma'lumotlari</h2>
+            <form id="form" class="space-y-3">
+                <input type="text" placeholder="Ism" id="firstName" class="w-full p-1 border-[#414141] border-1 rounded-md" required>
+                <input type="text" placeholder="Familiya" id="lastName" class="w-full p-1 border-[#414141] border-1 rounded-md" required>
+
+                <select id="location" class="w-full p-1 border-[#414141] border-1 rounded-md" required>
+                    <option value="">Manzilni tanlang</option>
+                    <option value="Toshkent">Toshkent</option>
+                    <option value="Mars">Mars</option>
+                </select>
+
+                <div class="flex gap-2">
+                    <input type="date" id="dob" class="flex-1 p-1 border border-1 rounded-md" required>
+                    <select id="position" class="flex-1 p-1 border border-1 rounded-md" required>
+                        <option value="">Lavozim</option>
+                        <option value="React">React</option>
+                        <option value="Python">Python</option>
+                    </select>
+                </div>
+
+                <div class="flex gap-2">
+                    <select id="positionType" class="flex-1 py-1 focus:outline-none bg-transparent p-1 border border-1 rounded-md" required>
+                        <option value="">Lavozim turi</option>
+                        <option value="junior">junior</option>
+                        <option value="middle">middle</option>
+                    </select>
+                    <input type="number" id="salary" placeholder="Maoshi" class="flex-1 py-1 focus:outline-none p-1 border border-1 rounded-md" required>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <input type="checkbox" id="married">
+                    <label for="married">Uylanganmi?</label>
+                </div>
+
+                <div class="flex justify-end gap-2 mt-4">
+                    <button type="button" id="closeModal" class="bg-gray-500 text-white px-4 py-2 rounded">Yopish</button>
+                    <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">Qo'shish</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+    <script src="./js/main.js"></script>
+</body>
+</html>
